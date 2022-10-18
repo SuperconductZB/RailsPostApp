@@ -1,0 +1,14 @@
+<h1>Users</h1>
+
+<h2>User in Our System</h2>
+<ul>
+  <% @user.each do |user| %>
+    <li>
+      <%= link_to user.username, user %>
+    </li>
+  <% end %>
+</ul>
+
+<form action="<%= new_user_path %>">
+  <button type="submit">Sign Up as New User</button>
+</form>

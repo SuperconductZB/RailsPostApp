@@ -1,4 +1,13 @@
-<p>Hello <%= @user.username%> ! </p>
+<h1>Hello <%= @user.username%></h1>
+
+<ul>
+  <li><%= link_to "Edit", edit_user_path(@user) %></li>
+  <li><%= button_to "Destroy", user_path(@user), method: :delete,
+  data: { method_turbo_confirm: "Are you sure?" }
+  %>
+  </li>
+</ul>
+
 <form action="/">
   <button> Back </button>
 </form>

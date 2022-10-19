@@ -5,6 +5,17 @@
   <% @user.each do |user| %>
     <li>
       <%= link_to user.username, user %>
+      <% user.posts.each do |post| %>
+        <p>
+          <strong>Title:</strong>
+          <%= post.title %>
+        </p>
+
+        <p>
+          <strong>Post:</strong>
+          <%= post.body %>
+        </p>
+      <% end %>
     </li>
   <% end %>
 </ul>

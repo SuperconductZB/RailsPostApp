@@ -3,20 +3,27 @@
       <%= form.label :username %><br>
       <%= form.text_field :username %>
       <% user.errors.full_messages_for(:username).each do |message| %>
-        <div><%= message %></div>
+        <div style="color:red;"><%= message %></div>
       <% end %>
     </div>
-  
+
+    <div>
+      <%= form.label :email %><br>
+      <%= form.text_field :email %><br>
+      <% user.errors.full_messages_for(:email).each do |message| %>
+        <div style="color:red;"><%= message %></div>
+      <% end %>
+    </div>
+
     <div>
       <%= form.label :password %><br>
-      <%= form.text_area :password %><br>
+      <%= form.text_field :password %><br>
       <% user.errors.full_messages_for(:password).each do |message| %>
-        <div><%= message %></div>
+        <div style="color:red;"><%= message %></div>
       <% end %>
     </div>
-  
+
     <div>
       <%= form.submit %>
     </div>
   <% end %>
-  

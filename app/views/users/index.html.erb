@@ -5,6 +5,7 @@
   <% @user.each do |user| %>
     <li>
       <%= link_to user.username, user %>
+      <%= user.email %>
       <% user.posts.each do |post| %>
         <p>
           <strong>Title:</strong>

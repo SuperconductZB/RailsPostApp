@@ -36,6 +36,34 @@
   </p>
 <% end %>
 
+<h2>Comments</h2>
+<% @user.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= User.find(comment.user_id).username %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_with model: [ @user, @user.comments.build ] do |form| %>
+  <p>
+    <%= form.label "Post Id" %><br>
+    <%= form.text_field :post_id %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <form action="/">
   <button> Back </button>
 </form>

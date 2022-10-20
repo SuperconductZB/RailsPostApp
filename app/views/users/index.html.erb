@@ -15,6 +15,18 @@
           <strong>Post:</strong>
           <%= post.body %>
         </p>
+        <ul>
+          <% post.comments.each do |comment| %>
+            <li>
+            <p>
+              <strong>Commenter:</strong>
+              <%= User.find(comment.user_id).username %>
+              <strong>Comment:</strong>
+              <%= comment.body %>
+            </p>
+            </li>
+          <% end %>
+        </ul>
       <% end %>
     </li>
   <% end %>
